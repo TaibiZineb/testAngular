@@ -1,0 +1,43 @@
+
+<p></p>
+<div class="container">
+    <div class="card card-primary">
+        <div class="card-header">
+            <h1>Gallery Component</h1>
+        </div>
+        <div class="card-body">
+            <form #f="ngForm" (ngSubmit)="onSearch(f.value)">
+                <div class="form-group">
+                    <label class="control-label">Mot Clé: </label>
+                    <input name="MotCle" ngModel type="text"required [(ngModel)]="motCle">
+                    <button  type="submit" class="btn btn-primary"> Chercher </button>
+                </div>
+            </form>
+            <div class="row">
+                <div *ngFor="let p of pagePhoto?.hits" class="col-md-3 cadre" >
+                    <div class="card contenue">
+                        <div class="card-header">
+                            <img class="rounded-circle" src="{{p.userImageURL}}" width="50" height="50">
+                            {{motCle}}
+                        </div>
+                        <div class="card-body">
+                            <!-- <div>
+                                <p>User : {{p.user}}</p>
+                                <p>{{p.tags}}</p>
+                            </div>-->
+                            <img src="{{p.previewURL}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <ul class="nav nav-pills">
+                        <li [ngClass]="{'active':currentPage==(i+1)}" class="clickable" *ngFor="let page of pages; let i = index">
+                            <a (click)="goToPage(i)">{{ i+1 }}</a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

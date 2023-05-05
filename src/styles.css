@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+.btn{
+    margin: 2px;
+}
+.panel-primary .panel-heading h1{
+    background-color: blue;
+    color: beige;
+    padding: 2px;
+}
+.panel-primary{
+    padding: 5px;
+    border: 1px solid #c9d1d9;
+    border-radius: 5px ;
+}
+.card.contenue .card-header{
+    background-color: aliceblue;
+    color: blue;
+
+}
+.cadre{
+    display: inline-block;
+}
+
+.card.contenue{
+    height: 400px;
+    margin: 6px;
+}
+.clickable{
+    cursor: pointer;
+    background: antiquewhite;
+    padding: 2px;
+    margin: 6px;
+    border-radius: 5px;
+}
+.nav-pills .clickable a{
+    color: blue;
+}
+li.clickable.active{
+    background: blue;
+    color: antiquewhite;
+}
