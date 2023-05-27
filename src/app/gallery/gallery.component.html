@@ -9,7 +9,7 @@
             <form #f="ngForm" (ngSubmit)="onSearch(f.value)">
                 <div class="form-group">
                     <label class="control-label">Mot Clé: </label>
-                    <input name="MotCle" ngModel type="text"required [(ngModel)]="motCle">
+                    <input name="motCle" ngModel type="text"required [(ngModel)]="motCle">
                     <button  type="submit" class="btn btn-primary"> Chercher </button>
                 </div>
             </form>

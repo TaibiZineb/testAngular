@@ -28,12 +28,15 @@ export class GalleryComponent implements OnInit {
 
  
     onSearch(dataForm:any){
-      this.galleryService.search(dataForm.motCl,this.size,this.currentPage) .subscribe((data:any)=>{
+      this.galleryService.search(dataForm.motCl,this.size,this.currentPage)
+       .subscribe((data:any)=>{
          this.pagePhoto=data; 
          this.totalPages=data.totalHits/ this.size;
          if(data.totalHits % this.size  != 0) ++this.totalPages;
          this.pages= new Array(this.totalPages);
-      });
+      },error=>{
+        console.log(error);
+      } )
     }
 
   goToPage(i: number){
